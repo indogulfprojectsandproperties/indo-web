@@ -22,6 +22,8 @@ import {
 import { BlockPattern } from "@/components/BlockPattern";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
 
+import { PageHeader } from "@/components/PageHeader";
+
 type MediaTab = "photos" | "videos" | "reels" | "vlogs" | "articles";
 
 export default function MediaHubPage() {
@@ -37,25 +39,17 @@ export default function MediaHubPage() {
 
   return (
     <div className="min-h-screen bg-softgrey">
-      {/* Light Hero Header */}
-      <section className="bg-softgrey text-navy pt-28 sm:pt-36 pb-16 relative overflow-hidden border-b border-navy/5">
-        <BlockPattern variant="corner" className="absolute top-12 right-12 hidden md:block opacity-60" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-navy text-xs font-bold border border-navy/10 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-              <span>Media &amp; Insights Center</span>
-            </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-navy">
-              Visual Galleries, Project Walkthroughs &amp; Real Estate Insights
-            </h1>
-            <p className="text-sm sm:text-base text-navy/75 leading-relaxed">
-              Explore on-ground site photographs, drone cinematography, short-form reels, market research
-              articles, and video walkthroughs across our Kerala and UAE developments.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 50-60vh Cinematic Header Banner */}
+      <PageHeader
+        title="Visual Galleries, Walkthroughs & Insights"
+        subtitle="Explore on-ground site photographs, drone cinematography, short-form reels, market research articles, and video walkthroughs across our developments."
+        bannerImage="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=2000&q=85"
+        badge="Media & Insights Center"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Media Hub" },
+        ]}
+      />
 
       {/* Tabs Navigation Bar (Light Theme) */}
       <div className="sticky top-20 z-30 bg-white/95 backdrop-blur-md border-b border-navy/10 shadow-xs">

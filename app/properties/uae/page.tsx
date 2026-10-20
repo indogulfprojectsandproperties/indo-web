@@ -26,28 +26,23 @@ const UAE_IMAGES: Record<string, string> = {
   "uae-land-plots": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
 };
 
+import { PageHeader } from "@/components/PageHeader";
+
 export default function UaePropertiesPage() {
   return (
     <div className="min-h-screen bg-softgrey">
-      {/* Light Hero Header */}
-      <section className="bg-softgrey text-navy pt-28 sm:pt-36 pb-16 relative overflow-hidden border-b border-navy/5">
-        <BlockPattern variant="corner" className="absolute top-12 right-12 hidden md:block opacity-60" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-navy text-xs font-bold border border-navy/10 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
-              <span>United Arab Emirates Real Estate Hub</span>
-            </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-navy">
-              UAE Commercial, Industrial &amp; Residential Real Estate
-            </h1>
-            <p className="text-sm sm:text-base text-navy/75 leading-relaxed">
-              Targeted opportunities across Dubai, Abu Dhabi, Sharjah, and designated Free Zones.
-              Browse verified inventory with full legal vetting directly on our platform.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 50-60vh Cinematic Header Banner */}
+      <PageHeader
+        title="UAE Commercial, Industrial & Residential Portfolios"
+        subtitle="Targeted opportunities across Dubai, Abu Dhabi, Sharjah, and designated Free Zones with verified developer inventory."
+        bannerImage="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=85"
+        badge="United Arab Emirates Real Estate Hub"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Properties", href: "/properties" },
+          { label: "UAE" },
+        ]}
+      />
 
       {/* Main Categories Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">

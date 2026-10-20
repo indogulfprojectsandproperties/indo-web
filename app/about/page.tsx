@@ -59,28 +59,22 @@ const WHY_CHOOSE_US = [
   },
 ];
 
+import { PageHeader } from "@/components/PageHeader";
+
 export default function AboutUsPage() {
   return (
     <div className="min-h-screen bg-softgrey">
-      {/* 1. Light Hero Header */}
-      <section className="bg-softgrey text-navy pt-28 sm:pt-36 pb-16 relative overflow-hidden border-b border-navy/5">
-        <BlockPattern variant="corner" className="absolute top-12 right-12 hidden md:block opacity-60" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-navy text-xs font-bold border border-navy/10 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
-              <span>About INDO GULF Projects &amp; Properties</span>
-            </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-navy">
-              Building Enduring Wealth Across Borders
-            </h1>
-            <p className="text-sm sm:text-base text-navy/75 leading-relaxed">
-              Founded on the pillars of uncompromised transparency, architectural distinction, and deep
-              geographic roots in Kerala and the United Arab Emirates.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 50-60vh Cinematic Header Banner */}
+      <PageHeader
+        title="Building Enduring Wealth Across Borders"
+        subtitle="Founded on the pillars of uncompromised transparency, architectural distinction, and deep geographic roots in Kerala and the United Arab Emirates."
+        bannerImage="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=85"
+        badge="About INDO GULF Projects & Properties"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "About Us" },
+        ]}
+      />
 
       {/* 2. Company Profile & Overview */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

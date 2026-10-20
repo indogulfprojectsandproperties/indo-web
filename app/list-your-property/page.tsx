@@ -21,6 +21,7 @@ import {
   Trash2,
 } from "lucide-react";
 import { BlockPattern } from "@/components/BlockPattern";
+import { PageHeader } from "@/components/PageHeader";
 import { COMPANY } from "@/lib/company";
 import { buildMessage, openWhatsApp, getWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -136,23 +137,17 @@ export default function ListYourPropertyPage() {
 
   return (
     <div className="min-h-screen bg-white pb-20">
-      {/* Hero Header */}
-      <section className="bg-softgrey text-navy pt-28 sm:pt-36 pb-20 relative overflow-hidden border-b border-navy/5">
-        <BlockPattern variant="corner" theme="light" className="absolute top-12 right-10 hidden md:block" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-navy/5 text-navy text-xs font-semibold">
-            <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
-            <span>Property Owners &amp; Landlords Desk</span>
-          </div>
-          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-navy">
-            List Your Property with INDO GULF
-          </h1>
-          <p className="text-sm sm:text-base text-navy/70 max-w-2xl mx-auto leading-relaxed">
-            Market your residential villa, commercial building, industrial warehouse, or land parcel
-            directly to verified Gulf NRI investors and qualified corporate buyers.
-          </p>
-        </div>
-      </section>
+      {/* 50-60vh Cinematic Header Banner */}
+      <PageHeader
+        title="List Your Property with INDO GULF"
+        subtitle="Market your residential villa, commercial building, industrial warehouse, or land parcel directly to verified Gulf NRI investors and qualified corporate buyers."
+        bannerImage="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=2000&q=85"
+        badge="Property Owners & Landlords Desk"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "List Your Property" },
+        ]}
+      />
 
       {/* Main Multi-Step Form Container */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">

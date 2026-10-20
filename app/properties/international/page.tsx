@@ -12,31 +12,26 @@ export const metadata: Metadata = {
     "Curated international property investments and global real estate opportunities presented by INDO GULF Projects & Properties.",
 };
 
+import { PageHeader } from "@/components/PageHeader";
+
 export default function InternationalPropertiesPage() {
   const meta = LISTING_CATEGORIES["international-other-countries"];
   const url = getListingUrl("international-other-countries");
 
   return (
     <div className="min-h-screen bg-softgrey">
-      {/* Light Hero Header */}
-      <section className="bg-softgrey text-navy pt-28 sm:pt-36 pb-16 relative overflow-hidden border-b border-navy/5">
-        <BlockPattern variant="corner" className="absolute top-12 right-12 hidden md:block opacity-60" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-navy text-xs font-bold border border-navy/10 shadow-xs">
-              <Globe className="w-3.5 h-3.5 text-cyan-dark" />
-              <span>Global Investment Horizons</span>
-            </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-navy">
-              International Real Estate Portfolios
-            </h1>
-            <p className="text-sm sm:text-base text-navy/75 leading-relaxed">
-              Curated opportunities in high-growth international jurisdictions for family offices,
-              institutional syndicates, and global NRI investors seeking geographic diversification.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 50-60vh Cinematic Header Banner */}
+      <PageHeader
+        title="International Real Estate Portfolios"
+        subtitle="Curated opportunities in high-growth international jurisdictions for family offices, institutional syndicates, and global NRI investors seeking geographic diversification."
+        bannerImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=85"
+        badge="Global Investment Horizons"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Properties", href: "/properties" },
+          { label: "International" },
+        ]}
+      />
 
       {/* Main Content */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">

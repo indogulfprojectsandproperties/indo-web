@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
 import { BlockPattern } from "@/components/BlockPattern";
+import { PageHeader } from "@/components/PageHeader";
 import { LISTING_CATEGORIES, getListingUrl, ListingCategoryKey } from "@/lib/listing-links";
 import { COMPANY } from "@/lib/company";
 
@@ -88,25 +89,18 @@ export default function IndiaPropertiesPage() {
 
   return (
     <div className="min-h-screen bg-softgrey">
-      {/* Light Hero Header */}
-      <section className="bg-softgrey text-navy pt-28 sm:pt-36 pb-16 relative overflow-hidden border-b border-navy/5">
-        <BlockPattern variant="corner" className="absolute top-12 right-12 hidden md:block opacity-60" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-navy text-xs font-bold border border-navy/10 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-red animate-pulse" />
-              <span>India Real Estate Portfolio</span>
-            </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-navy">
-              Kerala &amp; Major Indian Metros
-            </h1>
-            <p className="text-sm sm:text-base text-navy/75 leading-relaxed">
-              From picturesque eco-resorts in Wayanad and smart township villas in Kozhikode to institutional
-              commercial towers in Bengaluru and Mumbai.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 50-60vh Cinematic Header Banner */}
+      <PageHeader
+        title="Kerala & Major Indian Metros"
+        subtitle="From picturesque eco-resorts in Wayanad and smart township villas in Kozhikode to institutional commercial towers in Bengaluru and Mumbai."
+        bannerImage="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85"
+        badge="India Real Estate Portfolio"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Properties", href: "/properties" },
+          { label: "India" },
+        ]}
+      />
 
       {/* Sections */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">

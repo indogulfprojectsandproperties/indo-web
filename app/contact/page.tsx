@@ -17,6 +17,8 @@ import { BlockPattern } from "@/components/BlockPattern";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { ConnectWithUs } from "@/components/ConnectWithUs";
 
+import { PageHeader } from "@/components/PageHeader";
+
 export const metadata: Metadata = {
   title: "Contact Us | Offices in India & UAE Desk",
   description:
@@ -26,25 +28,17 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white pb-20">
-      {/* Hero Header */}
-      <section className="bg-softgrey text-navy pt-28 sm:pt-36 pb-16 relative overflow-hidden border-b border-navy/5">
-        <BlockPattern variant="corner" theme="light" className="absolute top-12 right-10 hidden md:block" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-navy/5 text-navy text-xs font-semibold">
-              <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-              <span>Direct Communication Lines</span>
-            </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-navy">
-              Connect With INDO GULF Projects &amp; Properties
-            </h1>
-            <p className="text-sm sm:text-base text-navy/70 leading-relaxed">
-              Reach our corporate headquarters at HiLITE Business Park Kozhikode or consult directly with
-              our UAE investment leadership desk.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 50-60vh Cinematic Header Banner */}
+      <PageHeader
+        title="Connect With INDO GULF"
+        subtitle="Reach our corporate headquarters at HiLITE Business Park Kozhikode or consult directly with our UAE investment leadership desk."
+        bannerImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85"
+        badge="Direct Communication Lines"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Contact Us" },
+        ]}
+      />
 
       {/* Main Grid: Info + Enquiry Form */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">

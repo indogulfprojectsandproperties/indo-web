@@ -19,6 +19,8 @@ import { BlockPattern } from "@/components/BlockPattern";
 import { EnquiryModal } from "@/components/EnquiryModal";
 import { COMPANY } from "@/lib/company";
 
+import { PageHeader } from "@/components/PageHeader";
+
 const ICON_MAP = {
   Home,
   Key,
@@ -42,25 +44,17 @@ export default function ServicesPage() {
         category={selectedService?.category}
       />
 
-      {/* Light Hero Header */}
-      <section className="bg-softgrey text-navy pt-28 sm:pt-36 pb-16 relative overflow-hidden border-b border-navy/5">
-        <BlockPattern variant="corner" className="absolute top-12 right-12 hidden md:block opacity-60" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-navy text-xs font-bold border border-navy/10 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-              <span>Full-Stack Real Estate Advisory</span>
-            </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-navy">
-              End-to-End Real Estate &amp; Advisory Services
-            </h1>
-            <p className="text-sm sm:text-base text-navy/75 leading-relaxed">
-              From individual luxury home sales to multi-acre industrial logistics leasing and cross-border
-              capital syndication across India and the United Arab Emirates.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 50-60vh Cinematic Header Banner */}
+      <PageHeader
+        title="End-to-End Real Estate & Advisory Services"
+        subtitle="From individual luxury home sales to multi-acre industrial logistics leasing and cross-border capital syndication across India and the United Arab Emirates."
+        bannerImage="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=85"
+        badge="Full-Stack Real Estate Advisory"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Services" },
+        ]}
+      />
 
       {/* Services Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">

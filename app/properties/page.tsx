@@ -14,6 +14,8 @@ import {
   ListingCategoryKey,
 } from "@/lib/listing-links";
 
+import { PageHeader } from "@/components/PageHeader";
+
 export const metadata: Metadata = {
   title: "Properties in India & UAE",
   description:
@@ -112,47 +114,36 @@ export default function PropertiesOverviewPage() {
 
   return (
     <div className="min-h-screen bg-softgrey">
-      {/* Light Header Banner */}
-      <section className="bg-softgrey text-navy pt-28 sm:pt-36 pb-16 relative overflow-hidden border-b border-navy/5">
-        <BlockPattern variant="corner" className="absolute top-12 right-12 hidden md:block opacity-60" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-navy text-xs font-bold border border-navy/10 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-              <span>Dedicated Property Inventory Platform</span>
-            </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-navy">
-              Property Categories &amp; Regional Portfolios
-            </h1>
-            <p className="text-sm sm:text-base text-navy/75 leading-relaxed">
-              All active property inventory is hosted and continuously updated on our platform{" "}
-              <strong className="text-navy font-bold">mylistingpoint.com</strong>. Select your category
-              below to browse verified listings with direct developer pricing and transparent documentation.
-            </p>
-
-            <div className="pt-2 flex flex-wrap items-center gap-3">
-              <Link
-                href="/properties/uae"
-                className="px-4 py-2 rounded-full bg-white hover:bg-navy hover:text-white text-xs font-bold text-navy border border-navy/10 shadow-2xs transition-colors"
-              >
-                UAE Properties
-              </Link>
-              <Link
-                href="/properties/india"
-                className="px-4 py-2 rounded-full bg-white hover:bg-navy hover:text-white text-xs font-bold text-navy border border-navy/10 shadow-2xs transition-colors"
-              >
-                India (Kerala &amp; Metros)
-              </Link>
-              <Link
-                href="/properties/international"
-                className="px-4 py-2 rounded-full bg-white hover:bg-navy hover:text-white text-xs font-bold text-navy border border-navy/10 shadow-2xs transition-colors"
-              >
-                International
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 50-60vh Cinematic Header Banner */}
+      <PageHeader
+        title="Property Categories & Regional Portfolios"
+        subtitle="All active property inventory is hosted and continuously updated on our dedicated platform mylistingpoint.com with verified developer terms."
+        bannerImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85"
+        badge="Dedicated Property Inventory Platform"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Properties" },
+        ]}
+      >
+        <Link
+          href="/properties/uae"
+          className="px-4 py-2 rounded-full bg-white/15 hover:bg-white text-white hover:text-navy text-xs font-semibold backdrop-blur-md border border-white/25 transition-all shadow-sm"
+        >
+          UAE Properties
+        </Link>
+        <Link
+          href="/properties/india"
+          className="px-4 py-2 rounded-full bg-white/15 hover:bg-white text-white hover:text-navy text-xs font-semibold backdrop-blur-md border border-white/25 transition-all shadow-sm"
+        >
+          India (Kerala &amp; Metros)
+        </Link>
+        <Link
+          href="/properties/international"
+          className="px-4 py-2 rounded-full bg-white/15 hover:bg-white text-white hover:text-navy text-xs font-semibold backdrop-blur-md border border-white/25 transition-all shadow-sm"
+        >
+          International
+        </Link>
+      </PageHeader>
 
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">

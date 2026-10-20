@@ -7,7 +7,8 @@ import {
   MessageCircle,
   CheckCircle2,
 } from "lucide-react";
-import { HeroSlider } from "@/components/HeroSlider";
+import { CinematicHero } from "@/components/CinematicHero";
+import { INTRO_DATA } from "@/data/intro";
 import { FEATURED_PROPERTIES } from "@/data/featured-properties";
 import { PropertyCard } from "@/components/PropertyCard";
 import { PROJECTS } from "@/data/projects";
@@ -25,11 +26,46 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col w-full overflow-hidden bg-white">
-      {/* 1. Hero Section with Light Split Slider */}
-      <HeroSlider />
+      {/* 1. Cinematic Brand Intro (SOBHA-inspired full-screen intro) */}
+      <CinematicHero />
 
-      {/* 2. Stats Strip */}
-      <StatsStrip />
+      {/* 2. Transition to Rest of Site: About Indo Gulf Teaser + Stats Strip */}
+      <section
+        id="intro-transition"
+        className="bg-white relative pt-16 sm:pt-20 border-b border-navy/5"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          {/* Boundary Divider with BlockPattern Motif */}
+          <div className="flex items-center justify-between border-b border-navy/10 pb-6 mb-10">
+            <div className="flex items-center gap-3">
+              <BlockPattern variant="default" />
+              <span className="text-xs uppercase tracking-[0.14em] font-semibold text-navy/70">
+                {INTRO_DATA.aboutTeaser.badge}
+              </span>
+            </div>
+            <Link
+              href={INTRO_DATA.aboutTeaser.linkHref}
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-heading font-bold text-navy hover:text-amber transition-colors group"
+            >
+              <span>{INTRO_DATA.aboutTeaser.linkText}</span>
+              <ArrowRight className="w-4 h-4 text-amber group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          {/* About Teaser Content */}
+          <div className="max-w-3xl">
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-navy tracking-[-0.02em] leading-tight">
+              {INTRO_DATA.aboutTeaser.heading}
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-navy-body leading-relaxed">
+              {INTRO_DATA.aboutTeaser.paragraph}
+            </p>
+          </div>
+        </div>
+
+        {/* Existing Stats Strip */}
+        <StatsStrip />
+      </section>
 
       {/* 3. Featured Properties Section */}
       <section className="py-20 lg:py-28 bg-softgrey relative border-b border-navy/5">

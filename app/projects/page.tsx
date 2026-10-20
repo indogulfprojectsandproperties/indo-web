@@ -4,6 +4,8 @@ import { PROJECTS } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { BlockPattern } from "@/components/BlockPattern";
 
+import { PageHeader } from "@/components/PageHeader";
+
 export const metadata: Metadata = {
   title: "Projects & Landmark Developments",
   description:
@@ -16,25 +18,17 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-softgrey">
-      {/* Light Hero Header */}
-      <section className="bg-softgrey text-navy pt-28 sm:pt-36 pb-16 relative overflow-hidden border-b border-navy/5">
-        <BlockPattern variant="corner" className="absolute top-12 right-12 hidden md:block opacity-60" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-navy text-xs font-bold border border-navy/10 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-              <span>Flagship Real Estate Developments</span>
-            </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-navy">
-              Signature Projects &amp; Master-Planned Enclaves
-            </h1>
-            <p className="text-sm sm:text-base text-navy/75 leading-relaxed">
-              Explore our landmark eco-resorts, smart township residences, and waterfront enclaves
-              engineered for capital appreciation and managed rental yields.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 50-60vh Cinematic Header Banner */}
+      <PageHeader
+        title="Signature Projects & Master-Planned Enclaves"
+        subtitle="Explore our landmark eco-resorts, smart township residences, and waterfront enclaves engineered for capital appreciation and managed rental yields."
+        bannerImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=2000&q=85"
+        badge="Flagship Real Estate Developments"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Projects" },
+        ]}
+      />
 
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
